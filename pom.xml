@@ -20,12 +20,49 @@
 
     <developers>
         <developer>
+            <name>Andrew Bayer</name>
+            <id>abayer</id>
+            <roles>
+                <role>release</role>
+            </roles>
+        </developer>
+        <developer>
             <name>Alexander Brandes</name>
             <id>NotMyFault</id>
             <email>contact(at)notmyfault.dev</email>
             <roles>
                 <role>release</role>
                 <role>maintainer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Jesse Glick</name>
+            <id>jglick</id>
+            <email>jglick@cloudbees.com</email>
+            <roles>
+                <role>release</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Robert Sandell</name>
+            <id>rsandell</id>
+            <email>rsandell@cloudbees.com</email>
+            <roles>
+                <role>release</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Kohsuke Kawaguchi</name>
+            <id>kohsuke</id>
+            <roles>
+                <role>release</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Oleg Nenashev</name>
+            <id>oleg-nenashev</id>
+            <roles>
+                <role>release</role>
             </roles>
         </developer>
     </developers>
