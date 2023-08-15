@@ -4,7 +4,7 @@
 
     <groupId>io.jenkins.tools</groupId>
     <artifactId>central-repository-pom</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Root POM for Publishing Jenkins tooling to the central repository</name>
@@ -71,7 +71,7 @@
         <connection>scm:git:git@github.com/jenkinsci/${project.artifactId}.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}.git</developerConnection>
         <url>https://github.com/jenkinsci/${project.artifactId}</url>
-        <tag>central-repository-pom-1.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
