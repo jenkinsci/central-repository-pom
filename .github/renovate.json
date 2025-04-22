@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":semanticCommitsDisabled"
   ],
   "automerge": true,
@@ -11,6 +11,8 @@
   "labels": [
     "dependencies"
   ],
-  "schedule": ["on the first day of the month"],
+  "schedule": [
+    "on the first day of the month"
+  ],
   "rebaseWhen": "conflicted"
 }
