@@ -132,6 +132,7 @@
                 <configuration>
                     <doclint>all,-missing</doclint>
                     <locale>en_US</locale>
+                    <notimestamp>true</notimestamp>
                 </configuration>
             </plugin>
             <plugin>
