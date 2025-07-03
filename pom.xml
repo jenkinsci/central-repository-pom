@@ -47,6 +47,9 @@
         <developer>
             <name>Basil Crow</name>
             <id>basilcrow</id>
+            <roles>
+                <role>release</role>
+            </roles>
         </developer>
     </developers>
 
