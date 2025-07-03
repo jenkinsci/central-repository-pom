@@ -20,8 +20,8 @@
 
     <developers>
         <developer>
-            <name>Alexander Brandes</name>
             <id>notmyfault</id>
+            <name>Alexander Brandes</name>
             <email>contact(at)notmyfault.dev</email>
             <roles>
                 <role>release</role>
@@ -29,24 +29,24 @@
             </roles>
         </developer>
         <developer>
-            <name>Jesse Glick</name>
             <id>jglick2</id>
+            <name>Jesse Glick</name>
             <email>jglick@cloudbees.com</email>
             <roles>
                 <role>release</role>
             </roles>
         </developer>
         <developer>
-            <name>Robert Sandell</name>
             <id>rsandell</id>
+            <name>Robert Sandell</name>
             <email>rsandell@cloudbees.com</email>
             <roles>
                 <role>release</role>
             </roles>
         </developer>
         <developer>
-            <name>Basil Crow</name>
             <id>basilcrow</id>
+            <name>Basil Crow</name>
             <roles>
                 <role>release</role>
             </roles>
@@ -56,8 +56,8 @@
     <scm>
         <connection>scm:git:git@github.com/jenkinsci/${project.artifactId}.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}.git</developerConnection>
-        <url>https://github.com/jenkinsci/${project.artifactId}</url>
         <tag>HEAD</tag>
+        <url>https://github.com/jenkinsci/${project.artifactId}</url>
     </scm>
 
     <properties>
@@ -228,10 +228,10 @@
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
-                                <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <phase>verify</phase>
                                 <configuration>
                                     <gpgArguments>
                                         <arg>--pinentry-mode</arg>
