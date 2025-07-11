@@ -186,7 +186,6 @@
                     <publishingServerId>central</publishingServerId>
                     <autoPublish>true</autoPublish>
                     <checksums>all</checksums>
-                    <waitUntil>published</waitUntil>
                 </configuration>
             </plugin>
         </plugins>
