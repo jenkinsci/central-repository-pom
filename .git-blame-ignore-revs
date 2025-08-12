@@ -1,0 +1,3 @@
+# .git-blame-ignore-revs
+# Run `mvn spotless:apply` (#53)
+a1111d35650ff372d8ce86e33611cf96e6827cbe
