@@ -66,6 +66,9 @@
         <!-- Generate metadata for reflection on method parameters -->
         <maven.compiler.parameters>true</maven.compiler.parameters>
 
+        <!-- Set to false to enable Spotless -->
+        <spotless.check.skip>true</spotless.check.skip>
+
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -84,11 +87,17 @@
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
+        <spotless-maven-plugin.version>2.46.1</spotless-maven-plugin.version>
     </properties>
 
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>com.diffplug.spotless</groupId>
+                    <artifactId>spotless-maven-plugin</artifactId>
+                    <version>${spotless-maven-plugin.version}</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -162,6 +171,41 @@
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <configuration>
+                    <java>
+                        <endWithNewline />
+                        <importOrder />
+                        <indent>
+                            <spaces>true</spaces>
+                        </indent>
+                        <palantirJavaFormat>
+                            <!-- Declare version so that spotless does not choose a version based on JDK version -->
+                            <!-- https://github.com/diffplug/spotless/issues/2503#issuecomment-2953146277 -->
+                            <version>2.73.0</version>
+                        </palantirJavaFormat>
+                        <removeUnusedImports />
+                        <trimTrailingWhitespace />
+                    </java>
+                    <pom>
+                        <sortPom>
+                            <expandEmptyElements>false</expandEmptyElements>
+                            <sortDependencies>scope,groupId,artifactId</sortDependencies>
+                            <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
+                            <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
+                        </sortPom>
+                    </pom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -261,6 +305,29 @@
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>may-spotless-apply</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.diffplug.spotless</groupId>
+                        <artifactId>spotless-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>spotless-apply</id>
+                                <goals>
+                                    <goal>apply</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <skip>${spotless.check.skip}</skip>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
